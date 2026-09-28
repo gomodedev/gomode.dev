@@ -1,0 +1,5 @@
+# pnpm allowed build scripts.
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true

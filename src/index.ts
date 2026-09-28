@@ -1,3 +1,4 @@
+// Cloudflare Worker routes and Durable Object entry points.
 import { DurableObject } from "cloudflare:workers";
 import { handleCallback, handleLogin, handleLogout, verifySession } from "./auth";
 
