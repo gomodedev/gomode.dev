@@ -3,3 +3,6 @@ allowBuilds:
   esbuild: true
   sharp: true
   workerd: true
+minimumReleaseAge: 11520
+minimumReleaseAgeIgnoreMissingTime: false
+minimumReleaseAgeStrict: true

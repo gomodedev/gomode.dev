@@ -11,6 +11,19 @@ Source code for https://gomode.dev
 | `pnpm run deploy` | Deploy to Cloudflare |
 | `pnpm exec wrangler types` | Generate TypeScript types (run after changing bindings) |
 
+## Git deployments
+
+Connect this repository's `main` branch to the `gomodev-dev` Worker in
+Cloudflare Workers → Settings → Build. Set:
+
+- Build command: `pnpm run build`
+- Deploy command: `pnpm exec wrangler deploy --define BUILD_VERSION:"\"$(git rev-parse --short HEAD)\""`
+- Version command: `pnpm exec wrangler versions upload --define BUILD_VERSION:"\"$(git rev-parse --short HEAD)\""`
+- Build variable: `SKIP_DEPENDENCY_INSTALL` = `1`.
+
+Workers Builds settings live in Cloudflare. `wrangler.jsonc` configures
+the Worker itself.
+
 ## Secrets
 
 The `/admin/waitlist` route is protected by Google OAuth. Before deploying, configure these secrets:

@@ -12,7 +12,7 @@
     "build": "wrangler deploy --dry-run --outdir .wrangler/build"
   },
   "devDependencies": {
-    "wrangler": "^4.68.0"
+    "wrangler": "4.135.0"
   },
   "packageManager": "pnpm@12.4.2",
   "engines": {
@@ -22,7 +22,7 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "^26.0.0",
+      "version": "26.9.0",
       "onFail": "download"
     }
   }
