@@ -1,7 +1,7 @@
 // Static Go Mode website assets and custom-domain routing.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "gomode-web",
+  "name": "gomode-dev",
   "compatibility_date": "2026-09-28",
   "assets": {
     "directory": "./public",
