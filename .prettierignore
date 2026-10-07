@@ -1,0 +1,6 @@
+.vitepress/cache/
+.vitepress/dist/
+.wrangler/
+AGENTS.md
+pnpm-lock.yaml
+public/screenshots/

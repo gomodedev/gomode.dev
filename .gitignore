@@ -1,2 +1,8 @@
-/node_modules/
-/.wrangler/
+.screenshots-import.lock
+.screenshots-previous/
+.screenshots-stage-*/
+.wrangler/
+__pycache__/
+node_modules/
+playwright-report/
+test-results/

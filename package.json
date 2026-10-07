@@ -1,18 +1,25 @@
 {
-  "name": "gomodev-dev",
+  "name": "gomode-dev",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "deploy": "python3 scripts/update_agents_file_index.py --check && wrangler deploy --define BUILD_VERSION:\"\\\"$(git rev-parse --short HEAD)\\\"\"",
+    "build": "pnpm run verify && wrangler deploy --dry-run --outdir .wrangler/build",
+    "deploy": "pnpm run build && wrangler deploy",
     "dev": "wrangler dev",
-    "start": "wrangler dev",
-    "fix": "python3 scripts/update_agents_file_index.py",
-    "verify": "python3 scripts/update_agents_file_index.py --check",
+    "fix": "prettier --write . && python3 scripts/update_agents_file_index.py",
     "prepare": "scripts/install-git-hooks.sh",
-    "build": "wrangler deploy --dry-run --outdir .wrangler/build"
+    "screenshots": "python3 scripts/screenshots.py",
+    "verify": "prettier --check . && python3 scripts/update_agents_file_index.py --check && python3 scripts/screenshots.py --check && pnpm run test && pnpm run typecheck",
+    "test": "python3 -m unittest discover -s scripts -p \"test_*.py\"",
+    "test:browser": "pnpm run build && playwright test",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "wrangler": "4.135.0"
+    "wrangler": "4.143.0",
+    "prettier": "3.8.2",
+    "@playwright/test": "1.63.0",
+    "@types/node": "26.6.2",
+    "typescript": "7.0.2"
   },
   "packageManager": "pnpm@12.4.2",
   "engines": {
