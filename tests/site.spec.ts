@@ -17,6 +17,9 @@ test("product website is readable, navigable, and loads native captures", async 
     "href",
     "https://docs.gomode.dev/guide/android",
   );
+  const setup = page.getByRole("link", { name: "Set up the Android app" });
+  for (let i = 0; i < 4; i++) await page.keyboard.press("Tab");
+  await expect(setup).toBeFocused();
   for (const image of await page.locator("main img").all()) {
     await image.scrollIntoViewIfNeeded();
     await expect(image).toBeVisible();
@@ -28,6 +31,15 @@ test("product website is readable, navigable, and loads native captures", async 
   await expect.poll(() => page.evaluate(() => scrollY)).toBe(0);
   await page.screenshot({ path: info.outputPath("product.png"), fullPage: true });
   await page.screenshot({ path: info.outputPath("product-top.png") });
+  const capture = page.getByRole("link", { name: "Native Go Mode voice mode and language settings" });
+  await capture.focus();
+  const opened = page.waitForEvent("popup");
+  await page.keyboard.press("Enter");
+  const fullSize = await opened;
+  await fullSize.waitForLoadState();
+  expect(fullSize.url()).toBe(new URL("/screenshots/voice-settings.webp", page.url()).href);
+  await expect(fullSize.locator("img")).toBeVisible();
+  await fullSize.close();
   expect(errors).toEqual([]);
 });
 

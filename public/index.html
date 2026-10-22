@@ -7,13 +7,16 @@
     <title>Go Mode — Your app. Hands free.</title>
     <meta
       name="description"
-      content="A native Android shell and open source voice platform for your web app. Connect your own host, keep your frontend, and expose actions through MCP."
+      content="A native Android shell and open source voice platform for your web app. Connect several services, choose cloud or on-device voice, and keep your frontend and accounts."
     />
     <meta name="theme-color" content="#126b57" />
     <link rel="icon" href="/favicon.svg" />
     <link rel="canonical" href="https://gomode.dev/" />
     <meta property="og:title" content="Go Mode — Your app. Hands free." />
-    <meta property="og:description" content="Bring your web app to Android, voice, and connected devices." />
+    <meta
+      property="og:description"
+      content="Your web apps, one voice conversation. A native Android shell with cloud and on-device voice."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gomode.dev/" />
     <meta property="og:image" content="https://gomode.dev/screenshots/hosted-service.webp" />
@@ -38,8 +41,8 @@
           <p class="eyebrow">Open source · Android + the web</p>
           <h1 id="hero-title">Your app. <br /><em>Hands free.</em></h1>
           <p class="lead">
-            Bring your web app along. Go Mode adds a native Android shell, voice conversations, and access to your
-            service’s tools.
+            Bring your web apps along. Connect your services in one Android shell, talk to their tools, and switch
+            between them without starting a new conversation.
           </p>
           <div class="actions">
             <a class="button primary" href="https://docs.gomode.dev/guide/android"
@@ -52,13 +55,14 @@
         </div>
         <figure class="hero-device">
           <div class="phone">
-            <img
-              src="/screenshots/hosted-service.webp"
-              width="1080"
-              height="2400"
-              alt="Go Mode Android shell displaying the Field Notes demonstration service"
-              fetchpriority="high"
-            />
+            <a class="capture-link" href="/screenshots/hosted-service.webp" target="_blank" rel="noopener"
+              ><img
+                src="/screenshots/hosted-service.webp"
+                width="1080"
+                height="2400"
+                alt="Go Mode Android shell displaying the Field Notes demonstration service"
+                fetchpriority="high"
+            /></a>
           </div>
           <figcaption>Real Android shell. Example host frontend.</figcaption>
         </figure>
@@ -66,9 +70,10 @@
       <section class="features wrap" aria-label="Go Mode capabilities">
         <article>
           <span class="number">01 / CONNECT</span>
-          <h2>One shell. Your services.</h2>
+          <h2>Several services. One conversation.</h2>
           <p>
-            Add a service URL and load its existing web interface. The host owns its content, login, and permissions.
+            Save your services and switch between their web interfaces. Every ready service stays callable, with one
+            voice conversation and transcript across them.
           </p>
           <a href="https://docs.gomode.dev/guide/android">Explore the Android shell →</a>
         </article>
@@ -76,20 +81,57 @@
           <span class="number">02 / SPEAK</span>
           <h2>Talk to your tools.</h2>
           <p>
-            A shared voice gateway handles conversation. MCP connects it to the actions your host exposes. Choose cloud
-            audio or speech on your device.
+            Choose cloud voice, device speech with a remote model, or a model running on your phone. MCP connects the
+            conversation to the tools your services expose.
           </p>
           <a href="https://docs.gomode.dev/guide/voice">Understand voice modes →</a>
         </article>
         <article>
-          <span class="number">03 / BUILD</span>
-          <h2>Keep your app yours.</h2>
+          <span class="number">03 / STAY IN THE LOOP</span>
+          <h2>Alerts that take you there.</h2>
           <p>
-            Use Go discovery, MCP and OAuth packages, SolidJS integration, and generated TypeScript, Kotlin, and Swift
-            clients.
+            Host alerts arrive as native notifications. Tap one to open the right page in the right saved service, even
+            when Go Mode is starting fresh.
           </p>
-          <a href="https://docs.gomode.dev/guide/host">Build a compatible host →</a>
+          <a href="https://docs.gomode.dev/guide/skills">Connect host alerts →</a>
         </article>
+      </section>
+      <section class="voice wrap" aria-labelledby="voice-title">
+        <div class="section-heading">
+          <p class="eyebrow">Choose where the conversation runs</p>
+          <h2 id="voice-title">Your voice. Your choice.</h2>
+          <p>Choose the speech mode, model, and language that fit your setup.</p>
+        </div>
+        <div class="voice-grid">
+          <article>
+            <h3>Cloud voice</h3>
+            <p>
+              Stream microphone audio to your gateway over WebRTC. Pick from its advertised audio choices and, where
+              supported, choose the speaking voice you hear.
+            </p>
+          </article>
+          <article>
+            <h3>Device speech, remote model</h3>
+            <p>
+              Android handles speech recognition and reads replies aloud. A text-capable gateway handles the
+              conversation and requests your host’s tools.
+            </p>
+          </article>
+          <article>
+            <h3>A model on your phone</h3>
+            <p>
+              Run conversation turns locally with Gemma 4 or LFM weights installed on the device. Experimental NeuDecide
+              and Whistle + Needle engines match speech to tool actions.
+            </p>
+          </article>
+        </div>
+        <p class="voice-note">
+          On-device voice is not an offline guarantee: speech availability depends on Android and its speech service,
+          and host tools still need a connection.
+        </p>
+        <a class="text-link" href="https://docs.gomode.dev/guide/android#choose-how-you-speak"
+          >Explore voice modes and local model setup →</a
+        >
       </section>
       <section class="band">
         <div class="wrap platform">
@@ -97,8 +139,8 @@
             <p class="eyebrow">A platform, with clear boundaries</p>
             <h2>Native where it helps.<br />Web where it belongs.</h2>
             <p>
-              Go Mode handles microphone access, audio routing, notifications, and the Android shell. Your host controls
-              the product experience and every action.
+              Keep your frontend, accounts, and product APIs. Add Go Mode’s discovery contract and MCP tools for native
+              voice and notifications. Your host authorizes every action.
             </p>
             <p>
               <a href="https://caic.xyz">caic</a> uses Go Mode to bring coding-agent workflows to Android. The reusable
@@ -111,7 +153,7 @@
             <dl>
               <div>
                 <dt>Android shell</dt>
-                <dd>WebView · voice · notifications</dd>
+                <dd>Saved services · WebView · voice · notifications</dd>
               </div>
               <div>
                 <dt>Your host</dt>
@@ -119,7 +161,7 @@
               </div>
               <div>
                 <dt>Voice gateway</dt>
-                <dd>Media · conversations · model transport</dd>
+                <dd>Cloud audio · text sessions · model choices</dd>
               </div>
             </dl>
             <a href="https://docs.gomode.dev/guide/architecture">See how it fits together →</a>
@@ -130,44 +172,53 @@
         <div class="section-heading">
           <p class="eyebrow">From the running Android emulator</p>
           <h2 id="gallery-title">A shell you can make your own.</h2>
-          <p>Manage connections, choose how you speak, and configure optional Halo integration.</p>
+          <p>
+            Save services, choose how you speak, and configure optional Halo integration. Open any capture to see it
+            full size.
+          </p>
         </div>
         <div class="gallery-grid">
           <figure>
-            <img
-              src="/screenshots/connections.webp"
-              width="1080"
-              height="2400"
-              alt="Native Go Mode service connections screen"
-              loading="lazy"
-            />
+            <a class="capture-link" href="/screenshots/connections.webp" target="_blank" rel="noopener"
+              ><img
+                src="/screenshots/connections.webp"
+                width="1080"
+                height="2400"
+                alt="Native Go Mode service connections screen"
+                loading="lazy"
+            /></a>
             <figcaption>Your service connections</figcaption>
           </figure>
           <figure>
-            <img
-              src="/screenshots/voice-settings.webp"
-              width="1080"
-              height="2400"
-              alt="Native Go Mode voice mode and language settings"
-              loading="lazy"
-            />
+            <a class="capture-link" href="/screenshots/voice-settings.webp" target="_blank" rel="noopener"
+              ><img
+                src="/screenshots/voice-settings.webp"
+                width="1080"
+                height="2400"
+                alt="Native Go Mode voice mode and language settings"
+                loading="lazy"
+            /></a>
             <figcaption>Voice mode and language</figcaption>
           </figure>
           <figure>
-            <img
-              src="/screenshots/halo.webp"
-              width="1080"
-              height="2400"
-              alt="Go Mode Halo glasses configuration screen"
-              loading="lazy"
-            />
+            <a class="capture-link" href="/screenshots/halo.webp" target="_blank" rel="noopener"
+              ><img
+                src="/screenshots/halo.webp"
+                width="1080"
+                height="2400"
+                alt="Go Mode Halo glasses configuration screen"
+                loading="lazy"
+            /></a>
             <figcaption>Optional Halo integration</figcaption>
           </figure>
         </div>
       </section>
       <section class="closing wrap">
         <h2>Start with your service.</h2>
-        <p>Build the Android app from source, or add Go Mode’s contract to your own host.</p>
+        <p>
+          Build the Android app from source, or integrate your host with Go packages, SolidJS browser support, and
+          generated TypeScript, Kotlin, and Swift clients.
+        </p>
         <div class="actions">
           <a class="button primary" href="https://docs.gomode.dev/guide/android">Android setup →</a
           ><a class="button secondary" href="https://docs.gomode.dev/guide/host">Host integration →</a>
