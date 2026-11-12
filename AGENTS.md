@@ -8,11 +8,9 @@ Read `/home/user/src/gomode/README.md` and the relevant implementation before ch
 
 Install hooks with `scripts/install-git-hooks.sh` before changes. Run `pnpm run fix`, `pnpm run verify`, and `pnpm run build`. Verify desktop/mobile layouts, keyboard navigation, image loading, console errors, and 404 responses in a browser after presentation changes.
 
-The site intentionally uses a new asset-only Worker. Preserve the old waitlist Worker’s persisted data; follow README.md when switching the custom domain. Do not add destructive Durable Object migrations.
-
 ## Captures
 
-Go Mode produces WebP captures in `e2e/screenshots/android`. Publish the captures `public/index.html` references with `uv run --locked python scripts/publish_screenshots.py ../gomode.dev` from the gomode checkout. Builds consume committed captures and never invoke the producer or download tools. Do not hand-edit generated captures.
+Go Mode produces WebP captures in `e2e/screenshots/android`. Publish the captures `public/index.html` references with `uv run --locked python scripts/publish_screenshots.py ../gomode.dev` from the gomode checkout. `public/favicon.svg` is generated from the Android launcher icon; publish it with `uv run --locked python scripts/publish_favicon.py ../gomode.dev` from the gomode checkout and never edit it by hand. Builds consume committed captures and never invoke the producer or download tools. Do not hand-edit generated captures.
 
 <!-- BEGIN FILE INDEX -->
 ## File Index

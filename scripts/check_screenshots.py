@@ -29,7 +29,10 @@ def main() -> int:
             errors.append(f"not WebP {name}")
     if errors:
         print(f"public/screenshots: {', '.join(errors)}", file=sys.stderr)
-        print("Publish with: uv run --locked python ../gomode/scripts/publish_screenshots.py .", file=sys.stderr)
+        print(
+            "Publish with: (cd ../gomode && uv run --locked python scripts/publish_screenshots.py ../gomode.dev)",
+            file=sys.stderr,
+        )
         return 1
     return 0
 

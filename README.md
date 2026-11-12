@@ -19,28 +19,27 @@ pnpm run test:browser
 
 The suite checks desktop and mobile layout, keyboard navigation, image loading, runtime errors, and missing pages. To use a locally installed Chromium instead, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its executable. Browser evidence is written under ignored `test-results/`.
 
-## Fresh Android screenshots
+## Go Mode publishes the screenshots and favicon
 
-The Go Mode repository owns the emulator, the scenarios, and publication. Generate its Android captures, then publish the ones this site references:
+The Go Mode repository owns the emulator, the scenarios, the launcher icon, and publication. Generate its Android captures, then publish the captures this site references and the favicon:
 
 ```bash
 (cd ../gomode && uv run --locked python scripts/publish_screenshots.py ../gomode.dev)
+(cd ../gomode && uv run --locked python scripts/publish_favicon.py ../gomode.dev)
 ```
 
 `public/screenshots` then holds exactly the referenced captures; Git restores it if a copy is interrupted. `pnpm run verify` checks that the committed images match the page references. Site builds do not download browsers, build an APK, or require a sibling checkout.
 
 ## Deployment
 
-The new asset-only Worker is named **gomode-website**. It intentionally differs from the old `gomode-dev` / `gomodev-dev` waitlist Worker so publishing this site does not migrate or delete its Durable Object namespaces or saved submissions.
-
-Before the first publication, connect this repository’s `main` branch to `gomode-website` in Cloudflare Workers Builds. Use:
+The asset-only Worker is named **gomode-dev**. Connect this repository’s `main` branch to it in Cloudflare Workers Builds. Use:
 
 - Build command: `pnpm install --frozen-lockfile && pnpm run build`
 - Deploy command: `pnpm exec wrangler deploy`
 - Preview command: `pnpm exec wrangler versions upload`
 - Build variable: `SKIP_DEPENDENCY_INSTALL=1`
 
-The Cloudflare account must own the `gomode.dev` zone. If the domain is attached to the old Worker, remove only that custom-domain attachment before assigning it to `gomode-website`; keep the old Worker and its Durable Objects until the stored submissions have been exported and deliberately retired. Do not add a deletion migration to publish this site.
+The Cloudflare account must own the `gomode.dev` zone.
 
 `wrangler.jsonc` owns the custom domain and asset routing. `pnpm run build` performs a local dry run and does not publish. `pnpm run deploy` publishes after checks; run it only when publication is intended.
 
