@@ -8,8 +8,7 @@
     "dev": "wrangler dev",
     "fix": "prettier --write . && python3 scripts/update_agents_file_index.py",
     "prepare": "scripts/install-git-hooks.sh",
-    "screenshots": "python3 scripts/screenshots.py",
-    "verify": "prettier --check . && python3 scripts/update_agents_file_index.py --check && python3 scripts/screenshots.py --check && pnpm run typecheck",
+    "verify": "prettier --check . && python3 scripts/update_agents_file_index.py --check && python3 scripts/check_screenshots.py && pnpm run typecheck",
     "test:browser": "pnpm run build && playwright test",
     "typecheck": "tsc --noEmit"
   },

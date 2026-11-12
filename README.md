@@ -21,13 +21,13 @@ The suite checks desktop and mobile layout, keyboard navigation, image loading, 
 
 ## Fresh Android screenshots
 
-The Go Mode repository owns the emulator and scenarios. Generate its Android captures first, then import the ones this site references:
+The Go Mode repository owns the emulator, the scenarios, and publication. Generate its Android captures, then publish the ones this site references:
 
 ```bash
-pnpm run screenshots --source ../gomode/e2e/screenshots/android
+(cd ../gomode && uv run --locked python scripts/publish_screenshots.py ../gomode.dev)
 ```
 
-The importer copies only the images `public/index.html` references and validates their WebP headers and dimensions before publishing. Publication uses two directory renames with a brief gap; a persistent previous catalog makes interruption recoverable. Unix imports serialize writers using an advisory lock. After a forced exit, rerun `--source` to recover before validating; `--check` reports pending recovery and never writes files. Site builds do not download browsers, build an APK, or require a sibling checkout.
+`public/screenshots` then holds exactly the referenced captures; Git restores it if a copy is interrupted. `pnpm run verify` checks that the committed images match the page references. Site builds do not download browsers, build an APK, or require a sibling checkout.
 
 ## Deployment
 
