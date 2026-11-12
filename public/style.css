@@ -1,13 +1,13 @@
 /* Go Mode landing page foundations, responsive product sections, and native capture gallery. */
 :root {
   color-scheme: light;
-  --paper: #f7f4ed;
-  --surface: #ebe9df;
-  --ink: #1a2723;
-  --muted: #52635b;
-  --brand: #126b57;
-  --line: #c7cec4;
-  --focus: #7c3600;
+  --paper: #f4f8fb;
+  --surface: #e4edf3;
+  --ink: #0d2148;
+  --muted: #47596b;
+  --brand: #1d6a96;
+  --line: #c4d3df;
+  --focus: #b45309;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
   background: var(--paper);
   color: var(--ink);

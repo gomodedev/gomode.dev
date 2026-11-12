@@ -45,3 +45,18 @@ The Cloudflare account must own the `gomode.dev` zone. If the domain is attached
 `wrangler.jsonc` owns the custom domain and asset routing. `pnpm run build` performs a local dry run and does not publish. `pnpm run deploy` publishes after checks; run it only when publication is intended.
 
 [Cloudflare static assets](https://developers.cloudflare.com/workers/static-assets/) and [custom domains](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/) describe the hosting contract.
+
+## Brand
+
+The palette takes its blues from the Go Mode launcher icon. Text and brand colors meet WCAG AA contrast on the paper and surface colors. docs.gomode.dev mirrors these values.
+
+| Role         | Light     | Dark      |
+| ------------ | --------- | --------- |
+| Brand        | `#1d6a96` | `#5cc3e6` |
+| Brand strong | `#174878` | `#8fd6ee` |
+| Paper        | `#f4f8fb` | `#0d1a2b` |
+| Surface      | `#e4edf3` | `#172a40` |
+| Ink          | `#0d2148` | `#eaf2f8` |
+| Muted        | `#47596b` | `#bccddb` |
+| Line         | `#c4d3df` | —         |
+| Focus        | `#b45309` | —         |
