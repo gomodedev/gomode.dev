@@ -1,6 +1,6 @@
 # Go Mode product website
 
-This repository owns gomode.dev, a static product website hosted with Cloudflare Workers assets. The standalone [Go Mode repository](https://github.com/maruel/gomode) owns the Android shell, Go host contracts, browser integration, MCP/OAuth transport, voice gateway, and capture producer.
+This repository owns gomode.dev, a static product website hosted with Cloudflare Workers assets. The standalone [Go Mode repository](https://github.com/gomodedev/gomode) owns the Android shell, Go host contracts, browser integration, MCP/OAuth transport, voice gateway, and capture producer.
 
 ## Source and validation
 
