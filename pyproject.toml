@@ -1,4 +1,10 @@
-# Ruff configuration for repository Python scripts.
+# Python tool environment and Ruff configuration for repository scripts.
+
+[project]
+name = "gomode-dev-tools"
+version = "0.0.0"
+requires-python = ">=3.12"
+dependencies = []
 
 [tool.ruff]
 target-version = "py312"

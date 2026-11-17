@@ -1,4 +1,4 @@
-/* Go Mode landing page foundations, responsive product sections, and native capture gallery. */
+/* Go Mode landing page foundations, responsive product sections, and real host and native capture galleries. */
 :root {
   color-scheme: light;
   --paper: #f4f8fb;
@@ -263,6 +263,28 @@ h2 {
   height: auto;
   border: 1px solid var(--line);
   border-radius: 18px;
+}
+.host-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.host-gallery figure {
+  min-width: 0;
+  margin: 0;
+}
+.host-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+@media (max-width: 800px) {
+  .host-gallery {
+    grid-template-columns: 1fr;
+  }
 }
 .closing {
   border-top: 1px solid var(--line);

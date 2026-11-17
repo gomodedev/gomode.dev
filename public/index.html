@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Go Mode product website: native Android shell, voice, and host integration. -->
+<!-- Go Mode product website: web and Android clients, cross-platform voice, and real host captures. -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -19,7 +19,7 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gomode.dev/" />
-    <meta property="og:image" content="https://gomode.dev/screenshots/hosted-service.webp" />
+    <meta property="og:image" content="https://gomode.dev/screenshots/caic-tasks.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/style.css" />
   </head>
@@ -41,8 +41,8 @@
           <p class="eyebrow">Open source · Android + the web</p>
           <h1 id="hero-title">Your app. <br /><em>Hands free.</em></h1>
           <p class="lead">
-            Bring your web apps along. Connect your services in one Android shell, talk to their tools, and switch
-            between them without starting a new conversation.
+            Talk to your web apps in the browser or the Android app. Connect your services in one Android shell and
+            switch between them without starting a new conversation.
           </p>
           <div class="actions">
             <a class="button primary" href="https://docs.gomode.dev/guide/android"
@@ -51,20 +51,20 @@
               >Connect your own app <span aria-hidden="true">→</span></a
             >
           </div>
-          <p class="fine">Your frontend. Your backend. Your accounts.</p>
+          <p class="fine">Web and Android clients. Voice gateway for Windows, macOS, and Linux.</p>
         </div>
         <figure class="hero-device">
           <div class="phone">
-            <a class="capture-link" href="/screenshots/hosted-service.webp" target="_blank" rel="noopener"
+            <a class="capture-link" href="/screenshots/caic-mobile.webp" target="_blank" rel="noopener"
               ><img
-                src="/screenshots/hosted-service.webp"
-                width="720"
-                height="1600"
-                alt="Go Mode Android shell displaying the Field Notes demonstration service"
+                src="/screenshots/caic-mobile.webp"
+                width="390"
+                height="844"
+                alt="caic's mobile web frontend showing coding-agent tasks"
                 fetchpriority="high"
             /></a>
           </div>
-          <figcaption>Real Android shell. Example host frontend.</figcaption>
+          <figcaption>caic’s web frontend on mobile.</figcaption>
         </figure>
       </section>
       <section class="features wrap" aria-label="Go Mode capabilities">
@@ -100,7 +100,10 @@
         <div class="section-heading">
           <p class="eyebrow">Choose where the conversation runs</p>
           <h2 id="voice-title">Your voice. Your choice.</h2>
-          <p>Choose the models, the language, and where each voice stage runs.</p>
+          <p>
+            Choose the models, the language, and where each voice stage runs. The voice gateway runs on Windows, macOS,
+            and Linux, serving web and Android clients.
+          </p>
         </div>
         <div class="voice-grid">
           <article>
@@ -143,8 +146,9 @@
               voice and notifications. Your host authorizes every action.
             </p>
             <p>
-              <a href="https://caic.xyz">caic</a> uses Go Mode to bring coding-agent workflows to Android. The reusable
-              platform works with other hosts too.
+              <a href="https://caic.xyz">caic</a> brings coding-agent workflows, and
+              <a href="https://mddb.app">mddb</a> brings documents and databases. Both use Go Mode for web and Android
+              voice access to their own tools.
             </p>
           </div>
           <div class="contract">
@@ -166,6 +170,42 @@
             </dl>
             <a href="https://docs.gomode.dev/guide/architecture">See how it fits together →</a>
           </div>
+        </div>
+      </section>
+      <section class="gallery wrap" aria-labelledby="hosts-title">
+        <div class="section-heading">
+          <p class="eyebrow">Built with Go Mode</p>
+          <h2 id="hosts-title">Your tools. Your interface.</h2>
+          <p>
+            Real caic and mddb frontends, captured by their screenshot suites with sample data. Each app keeps its own
+            interface while Go Mode connects voice to its tools. Open a capture to see it full size.
+          </p>
+        </div>
+        <div class="host-gallery">
+          <figure>
+            <a class="capture-link" href="/screenshots/caic-tasks.webp" target="_blank" rel="noopener">
+              <img
+                src="/screenshots/caic-tasks.webp"
+                width="1280"
+                height="800"
+                alt="caic's coding-agent task dashboard"
+                loading="lazy"
+              />
+            </a>
+            <figcaption><a href="https://caic.xyz">caic</a> · Coding agents in parallel</figcaption>
+          </figure>
+          <figure>
+            <a class="capture-link" href="/screenshots/mddb-editor.webp" target="_blank" rel="noopener">
+              <img
+                src="/screenshots/mddb-editor.webp"
+                width="1280"
+                height="800"
+                alt="mddb's document editor and workspace navigation"
+                loading="lazy"
+              />
+            </a>
+            <figcaption><a href="https://mddb.app">mddb</a> · Documents and databases</figcaption>
+          </figure>
         </div>
       </section>
       <section class="gallery wrap" aria-labelledby="gallery-title">

@@ -1,7 +1,7 @@
-// Browser acceptance for Go Mode product navigation, native captures, keyboard access, and real 404s.
+// Browser acceptance for Go Mode product navigation, host and native captures, keyboard access, and real 404s.
 import { expect, test } from "@playwright/test";
 
-test("product website is readable, navigable, and loads native captures", async ({ page }, info) => {
+test("product website is readable, navigable, and loads host and native captures", async ({ page }, info) => {
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   page.on("console", (message) => {
