@@ -9,7 +9,7 @@
     "fix": "prettier --write . && python3 scripts/update_agents_file_index.py",
     "prepare": "scripts/install-git-hooks.sh",
     "verify": "prettier --check . && python3 scripts/update_agents_file_index.py --check && python3 scripts/check_screenshots.py && pnpm run typecheck",
-    "test:browser": "pnpm run build && playwright test",
+    "test": "pnpm run build && playwright test",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

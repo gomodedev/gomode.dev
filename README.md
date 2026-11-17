@@ -14,7 +14,7 @@ pnpm run dev
 
 ```bash
 pnpm exec playwright install chromium
-pnpm run test:browser
+pnpm run test
 ```
 
 The suite checks desktop and mobile layout, keyboard navigation, image loading, runtime errors, and missing pages. To use a locally installed Chromium instead, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its executable. Browser evidence is written under ignored `test-results/`.

@@ -31,7 +31,7 @@ test("product website is readable, navigable, and loads native captures", async 
   await expect.poll(() => page.evaluate(() => scrollY)).toBe(0);
   await page.screenshot({ path: info.outputPath("product.png"), fullPage: true });
   await page.screenshot({ path: info.outputPath("product-top.png") });
-  const capture = page.getByRole("link", { name: "Native Go Mode voice mode and language settings" });
+  const capture = page.getByRole("link", { name: "Native Go Mode voice setup and language settings" });
   await capture.focus();
   const opened = page.waitForEvent("popup");
   await page.keyboard.press("Enter");
