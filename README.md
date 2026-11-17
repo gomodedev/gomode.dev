@@ -59,3 +59,6 @@ The palette takes its blues from the Go Mode launcher icon. Text and brand color
 | Muted        | `#47596b` | `#bccddb` |
 | Line         | `#c4d3df` | —         |
 | Focus        | `#b45309` | —         |
+| Accent text  | `#a14a08` | —         |
+
+Focus draws keyboard focus outlines, which need 3:1 contrast. Accent text is the darker amber for highlighted text, such as the Android voice panel's active tool name; it keeps 4.5:1 on the panel's tinted surface, where Focus does not.
