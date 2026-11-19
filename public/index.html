@@ -4,12 +4,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f4f8fb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0d1a2b" media="(prefers-color-scheme: dark)" />
     <title>Go Mode — Your app. Hands free.</title>
     <meta
       name="description"
       content="A native Android shell and open source voice platform for your web app. Connect several services, choose cloud or on-device voice, and keep your frontend and accounts."
     />
-    <meta name="theme-color" content="#1d6a96" />
     <link rel="icon" href="/favicon.svg" />
     <link rel="canonical" href="https://gomode.dev/" />
     <meta property="og:title" content="Go Mode — Your app. Hands free." />
@@ -19,7 +21,7 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gomode.dev/" />
-    <meta property="og:image" content="https://gomode.dev/screenshots/caic-tasks.webp" />
+    <meta property="og:image" content="https://gomode.dev/screenshots/caic-tasks-light.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/style.css" />
   </head>
@@ -55,14 +57,17 @@
         </div>
         <figure class="hero-device">
           <div class="phone">
-            <a class="capture-link" href="/screenshots/caic-mobile.webp" target="_blank" rel="noopener"
-              ><img
-                src="/screenshots/caic-mobile.webp"
-                width="390"
-                height="844"
-                alt="caic's mobile web frontend showing coding-agent tasks"
-                fetchpriority="high"
-            /></a>
+            <a class="capture-link" href="/screenshots/caic-mobile-light.webp" target="_blank" rel="noopener">
+              <picture
+                ><source media="(prefers-color-scheme: dark)" srcset="/screenshots/caic-mobile-dark.webp" />
+                <img
+                  src="/screenshots/caic-mobile-light.webp"
+                  width="390"
+                  height="844"
+                  alt="caic's mobile web frontend showing coding-agent tasks"
+                  fetchpriority="high"
+              /></picture>
+            </a>
           </div>
           <figcaption>caic’s web frontend on mobile.</figcaption>
         </figure>
@@ -183,26 +188,32 @@
         </div>
         <div class="host-gallery">
           <figure>
-            <a class="capture-link" href="/screenshots/caic-tasks.webp" target="_blank" rel="noopener">
-              <img
-                src="/screenshots/caic-tasks.webp"
-                width="1280"
-                height="800"
-                alt="caic's coding-agent task dashboard"
-                loading="lazy"
-              />
+            <a class="capture-link" href="/screenshots/caic-tasks-light.webp" target="_blank" rel="noopener">
+              <picture
+                ><source media="(prefers-color-scheme: dark)" srcset="/screenshots/caic-tasks-dark.webp" />
+                <img
+                  src="/screenshots/caic-tasks-light.webp"
+                  width="1280"
+                  height="800"
+                  alt="caic's coding-agent task dashboard"
+                  loading="lazy"
+                />
+              </picture>
             </a>
             <figcaption><a href="https://caic.xyz">caic</a> · Coding agents in parallel</figcaption>
           </figure>
           <figure>
-            <a class="capture-link" href="/screenshots/mddb-editor.webp" target="_blank" rel="noopener">
-              <img
-                src="/screenshots/mddb-editor.webp"
-                width="1280"
-                height="800"
-                alt="mddb's document editor and workspace navigation"
-                loading="lazy"
-              />
+            <a class="capture-link" href="/screenshots/mddb-editor-light.webp" target="_blank" rel="noopener">
+              <picture
+                ><source media="(prefers-color-scheme: dark)" srcset="/screenshots/mddb-editor-dark.webp" />
+                <img
+                  src="/screenshots/mddb-editor-light.webp"
+                  width="1280"
+                  height="800"
+                  alt="mddb's document editor and workspace navigation"
+                  loading="lazy"
+                />
+              </picture>
             </a>
             <figcaption><a href="https://mddb.app">mddb</a> · Documents and databases</figcaption>
           </figure>
@@ -219,36 +230,45 @@
         </div>
         <div class="gallery-grid">
           <figure>
-            <a class="capture-link" href="/screenshots/connections.webp" target="_blank" rel="noopener"
-              ><img
-                src="/screenshots/connections.webp"
-                width="720"
-                height="1600"
-                alt="Native Go Mode service connections screen"
-                loading="lazy"
-            /></a>
+            <a class="capture-link" href="/screenshots/connections-light.webp" target="_blank" rel="noopener">
+              <picture
+                ><source media="(prefers-color-scheme: dark)" srcset="/screenshots/connections-dark.webp" />
+                <img
+                  src="/screenshots/connections-light.webp"
+                  width="720"
+                  height="1600"
+                  alt="Native Go Mode service connections screen"
+                  loading="lazy"
+              /></picture>
+            </a>
             <figcaption>Your service connections</figcaption>
           </figure>
           <figure>
-            <a class="capture-link" href="/screenshots/voice-settings.webp" target="_blank" rel="noopener"
-              ><img
-                src="/screenshots/voice-settings.webp"
-                width="720"
-                height="1600"
-                alt="Native Go Mode voice setup and language settings"
-                loading="lazy"
-            /></a>
+            <a class="capture-link" href="/screenshots/voice-settings-light.webp" target="_blank" rel="noopener">
+              <picture
+                ><source media="(prefers-color-scheme: dark)" srcset="/screenshots/voice-settings-dark.webp" />
+                <img
+                  src="/screenshots/voice-settings-light.webp"
+                  width="720"
+                  height="1600"
+                  alt="Native Go Mode voice setup and language settings"
+                  loading="lazy"
+              /></picture>
+            </a>
             <figcaption>Voice stages and language</figcaption>
           </figure>
           <figure>
-            <a class="capture-link" href="/screenshots/halo.webp" target="_blank" rel="noopener"
-              ><img
-                src="/screenshots/halo.webp"
-                width="720"
-                height="1600"
-                alt="Go Mode Halo glasses configuration screen"
-                loading="lazy"
-            /></a>
+            <a class="capture-link" href="/screenshots/halo-light.webp" target="_blank" rel="noopener">
+              <picture
+                ><source media="(prefers-color-scheme: dark)" srcset="/screenshots/halo-dark.webp" />
+                <img
+                  src="/screenshots/halo-light.webp"
+                  width="720"
+                  height="1600"
+                  alt="Go Mode Halo glasses configuration screen"
+                  loading="lazy"
+              /></picture>
+            </a>
             <figcaption>Optional Halo integration</figcaption>
           </figure>
         </div>
@@ -276,5 +296,6 @@
         ><a href="https://caic.xyz">caic</a>
       </nav>
     </footer>
+    <script type="module" src="/screenshots.js"></script>
   </body>
 </html>

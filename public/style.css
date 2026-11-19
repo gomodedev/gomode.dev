@@ -1,16 +1,32 @@
 /* Go Mode landing page foundations, responsive product sections, and real host and native capture galleries. */
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
   --paper: #f4f8fb;
   --surface: #e4edf3;
   --ink: #0d2148;
   --muted: #47596b;
   --brand: #1d6a96;
+  --brand-strong: #174878;
+  --on-brand: #ffffff;
   --line: #c4d3df;
   --focus: #b45309;
+  --device-frame: #0d2148;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
   background: var(--paper);
   color: var(--ink);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0d1a2b;
+    --surface: #172a40;
+    --ink: #eaf2f8;
+    --muted: #bccddb;
+    --brand: #5cc3e6;
+    --brand-strong: #8fd6ee;
+    --on-brand: #0d1a2b;
+    --line: #3d536b;
+    --focus: #ffc78f;
+  }
 }
 * {
   box-sizing: border-box;
@@ -128,10 +144,10 @@ h1 em {
 }
 .primary {
   background: var(--brand);
-  color: var(--paper);
+  color: var(--on-brand);
 }
 .primary:hover {
-  background: var(--ink);
+  background: var(--brand-strong);
 }
 .secondary {
   border: 1px solid var(--line);
@@ -152,9 +168,9 @@ h1 em {
 }
 .phone {
   width: min(100%, 276px);
-  border: 7px solid var(--ink);
+  border: 7px solid var(--device-frame);
   border-radius: 32px;
-  background: var(--ink);
+  background: var(--device-frame);
   box-shadow: 20px 24px 0 var(--surface);
 }
 .phone img {

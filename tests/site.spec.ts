@@ -37,10 +37,25 @@ test("product website is readable, navigable, and loads host and native captures
   await page.keyboard.press("Enter");
   const fullSize = await opened;
   await fullSize.waitForLoadState();
-  expect(fullSize.url()).toBe(new URL("/screenshots/voice-settings.webp", page.url()).href);
+  expect(fullSize.url()).toBe(new URL("/screenshots/voice-settings-light.webp", page.url()).href);
   await expect(fullSize.locator("img")).toBeVisible();
   await fullSize.close();
   expect(errors).toEqual([]);
+});
+
+test("the page follows browser appearance changes", async ({ page }, info) => {
+  await page.emulateMedia({ colorScheme: "dark" });
+  await page.goto("/");
+  const canvas = page.locator("html");
+  await expect(canvas).toHaveCSS("background-color", "rgb(13, 26, 43)");
+  const capture = page.getByRole("link", { name: "Native Go Mode voice setup and language settings" });
+  await capture.scrollIntoViewIfNeeded();
+  await expect(capture).toHaveAttribute("href", /voice-settings-dark\.webp$/);
+  await page.screenshot({ path: info.outputPath("dark.png") });
+
+  await page.emulateMedia({ colorScheme: "light" });
+  await expect(canvas).toHaveCSS("background-color", "rgb(244, 248, 251)");
+  await expect(capture).toHaveAttribute("href", /voice-settings-light\.webp$/);
 });
 
 test("unknown routes return a real 404 and a working home link", async ({ page }) => {

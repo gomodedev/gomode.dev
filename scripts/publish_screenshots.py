@@ -19,9 +19,13 @@ from check_screenshots import ROOT, is_webp, referenced
 REPOSITORIES = ROOT.parent
 SOURCE = REPOSITORIES / "gomode/e2e/screenshots/android"
 PRODUCT_CAPTURES = {
-    "caic-mobile.webp": REPOSITORIES / "caic/e2e/screenshots/frontend/mobile/overview.webp",
-    "caic-tasks.webp": REPOSITORIES / "caic/e2e/screenshots/frontend/desktop/overview.webp",
-    "mddb-editor.webp": REPOSITORIES / "mddb/e2e/screenshots/docs/document-editor.webp",
+    f"{name}-{theme}.webp": REPOSITORIES / f"{source}-{theme}.webp"
+    for name, source in (
+        ("caic-mobile", "caic/e2e/screenshots/frontend/mobile/overview"),
+        ("caic-tasks", "caic/e2e/screenshots/frontend/desktop/overview"),
+        ("mddb-editor", "mddb/e2e/screenshots/docs/document-editor"),
+    )
+    for theme in ("light", "dark")
 }
 
 
